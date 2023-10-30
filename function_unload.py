@@ -131,7 +131,7 @@ def transform_null(df):
 def insert_tb_series(df,connection):
         # Iterar a través de las filas del DataFrame e insertar en la tabla
      for index, row in df.iterrows():
-         # Asegúrate de que los nombres de las columnas coincidan con la tabla
+         # Aquí debe modificar, Asegúrate de que los nombres de las columnas coincidan con la tabla
          sql_query = "INSERT INTO series (run_fm, serie, caracteristica, fecha_inicio, fecha_termino, valor_cuota_inicial, continuadora_serie) VALUES (%s, %s, %s, %s, %s, %s, %s)"  # Reemplaza con los nombres de tus columnas
          # Ejecutar la inserción con los valores de la fila actual
          connection.cursor().execute(sql_query, (row['run_fm'], row['serie'], row['caracteristica'], row['fecha_inicio'], row['fecha_termino'], row['valor_cuota_inicial'], row['continuadora_serie']))
@@ -141,7 +141,7 @@ def insert_tb_series(df,connection):
 def insert_tb_detalle_fondo(df,connection):
             # Iterar a través de las filas del DataFrame e insertar en la tabla
     for index, row in df.iterrows():
-        # Asegúrate de que los nombres de las columnas coincidan con la tabla
+        # Aquí debe modificar, Asegúrate de que los nombres de las columnas coincidan con la tabla
         sql_query = "INSERT INTO detalle_fondo (run_fm,run_fondo_largo,nombre_fondo,nombre_fm_corto,vigencia,estado,tipo_fondo,rut_adm,razon_social_adm,fecha_deposito,fecha_ult_modificacion,fecha_inicio_operaciones,n_resolucion,fecha_cumplimiento,fecha_termino,numero_registro) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"  # Reemplaza con los nombres de tus columnas
         # Ejecutar la inserción con los valores de la fila actual
         connection.cursor().execute(sql_query, (row['run_fm'],row['run_fondo_largo'],row['nombre_fondo'],row['nombre_fm_corto'],row['vigencia'],row['estado'],row['tipo_fondo'],row['rut_adm'],row['razon_social_adm'],row['fecha_deposito'],row['fecha_ult_modificacion'],row['fecha_inicio_operaciones'],row['n_resolucion'],row['fecha_cumplimiento'],row['fecha_termino'],row['numero_registro']))

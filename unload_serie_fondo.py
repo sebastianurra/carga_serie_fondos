@@ -3,7 +3,7 @@ import pandas as pd
 import pg8000
 
 def main():
-    # Parámetros de conexión a la base de datos
+    # Parámetros de conexión a la base de datos, aqui se debe modificar
     db_params = {
         'database': 'ffmm',
         'user': 'postgres',
